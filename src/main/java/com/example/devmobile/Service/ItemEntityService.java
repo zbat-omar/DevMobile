@@ -14,7 +14,12 @@ public class ItemEntityService {
     private ItemRepository itemRepository;
     @Autowired
     private ItemConditionRepository itemConditionRepository;
+//    @Autowired
+//    private ItemEntity itemEntity;
     public List<ItemEntity> Items(){
         return itemRepository.findAll();
+    }
+    public void addItem(ItemEntity itemEntity){
+        itemRepository.save(itemEntity);
     }
 }
