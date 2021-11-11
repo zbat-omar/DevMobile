@@ -6,8 +6,9 @@ import com.example.devmobile.Repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Id;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ItemEntityService {
     @Autowired
@@ -21,5 +22,8 @@ public class ItemEntityService {
     }
     public void addItem(ItemEntity itemEntity){
         itemRepository.save(itemEntity);
+    }
+    public Optional<ItemEntity> getitembyid(int id){
+        return itemRepository.findById(id);
     }
 }
